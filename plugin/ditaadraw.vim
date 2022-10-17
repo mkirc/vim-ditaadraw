@@ -72,14 +72,14 @@ function! ditaadraw#AddMarkdownImgLink(lines, label)
 endfunction
 
 
-function! TestDD()
+function! ditaadraw#Main()
 
     let l:lines = ditaadraw#GetBlockLineNumbers()
     let l:lines_content = ditaadraw#GetContentForLines(l:lines)
     let l:label = ditaadraw#GetLabel()
 
     if empty(l:lines_content)
-        echo "Not in ditaa block"
+        echo "Not in ditaa block."
         return 0
     endif
 
@@ -90,4 +90,10 @@ function! TestDD()
 
     call ditaadraw#RunDitaa(l:lines_content, l:label)
     call ditaadraw#AddMarkdownImgLink(l:lines, l:label)
+
 endfunction
+
+""""""" Keyboard Mapping """"""
+
+nnoremap <Leader>dit :call ditaadraw#Main()<CR>
+
