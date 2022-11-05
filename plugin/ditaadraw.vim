@@ -65,9 +65,9 @@ endfunction
 
 function! ditaadraw#RunDitaa(lines_content, label)
 
-    let l:ditaa_args = ['--transparent']
+    let l:ditaa_args = ['--transparent', '--no-shadows', '--svg']
     let l:tempfile = [tempname()]
-    let l:out_file = [shellescape(expand('%:p:h').'/'.a:label . '.png')]
+    let l:out_file = [shellescape(expand('%:p:h').'/'.a:label . '.svg')]
     let l:cmd = ['ditaa'] + l:ditaa_args + l:tempfile + l:out_file
 
     " echo join(l:cmd, " ")
@@ -94,7 +94,7 @@ endfunction
 
 function! ditaadraw#AddMarkdownLink(lower, label)
 
-    let l:out_file = './' .a:label. '.png'
+    let l:out_file = './' .a:label. '.svg'
     let l:img_link = "![" .a:label. "](" .l:out_file. " \"" .a:label. "\")"
 
     if getline(a:lower+1)[0] == '!' "Img link already present
