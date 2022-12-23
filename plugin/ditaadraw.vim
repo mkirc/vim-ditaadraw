@@ -65,7 +65,7 @@ endfunction
 
 function! ditaadraw#RunDitaa(lines_content, label)
 
-    let l:ditaa_args = ['--transparent', '--no-shadows', '--svg']
+    let l:ditaa_args = ['--transparent', '--no-shadows', '--svg', '-E']
     let l:tempfile = [tempname()]
     let l:out_file = [shellescape(expand('%:p:h').'/'.a:label . '.svg')]
     let l:cmd = ['ditaa'] + l:ditaa_args + l:tempfile + l:out_file
@@ -147,5 +147,5 @@ endfunction
 
 """"""" Keyboard Mapping """"""
 
-nnoremap <Leader>dit :call ditaadraw#Main()<CR>
+nnoremap <Leader>dr :call ditaadraw#Main()<CR>
 
