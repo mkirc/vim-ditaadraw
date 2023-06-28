@@ -19,8 +19,10 @@ Consider this simple ascii diagram:
 
 With the cursor inside the code block
 or on the lines with the backticks
-hit `localleader + dit` and **vim-ditaadraw**
+hit `localleader + dr` (think "ditaa recompile") and **vim-ditaadraw**
 sends the code block to a tempfile and runs `ditaa` on it.
+
+A dialog in the vim command line will ask you for a description.
 
 The output file will be created in the same directory as the
 markdown file and named `description.svg`. After successfully
