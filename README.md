@@ -59,3 +59,11 @@ lower-version releases also work, but you have to adjust `l:ditaa_args` in
 `ditaadraw#RunDitaa`. Setting the args from `vimrc` is of course possible, but
 not implemented. If you think it should be supported, let me know)
 
+## TODO
+
+* [] fall back to `.png` for lower ditaa versions
+
+* [] detect imgs with `description` already present and ask what to do
+
+* integrate with vim :h
+
